@@ -2,89 +2,74 @@
 
 let playerScore = 0;
 let computerScore = 0;
+let computerSelection = "&nbsp";
 
 const choiceRock = document.querySelector('#rock');
 const choicePaper = document.querySelector('#paper');
 const choiceScissors = document.querySelector('#scissors');
+const computerChoiceText = document.querySelector('#computer-choice');
 
 choiceRock.addEventListener('click', () => {
-    alert("You chose rock");
+    let playerSelection = "rock";
+    playRound(playerSelection, computerPlay());
 });
 choicePaper.addEventListener('click', () => {
-    alert("You chose paper");
+    let playerSelection = "paper";
+    playRound(playerSelection, computerPlay());
 });
 choiceScissors.addEventListener('click', () => {
-    alert("You chose scissors");
+    let playerSelection = "scissors";
+    playRound(playerSelection, computerPlay());
 });
 
 function playRound(playerSelection, computerSelection){
-    let playerSelectionLower = playerSelection.toLowerCase();
-    let computerSelectionLower = computerSelection.toLowerCase();
 
-    if(playerSelectionLower === "rock"){
-        switch(computerSelectionLower){
+    if(playerSelection === "rock"){
+        switch(computerSelection){
             case "rock":
-                return "It's a tie! You both chose " + playerSelectionLower + "."
+                return "It's a tie! You both chose " + playerSelection + "."
                 break;
             case "paper":
                 computerScore+= 1
-                return "You lose, " + playerSelectionLower + " is beaten by " + computerSelectionLower + "!"
+                return "You lose, " + playerSelection + " is beaten by " + computerSelection + "!"
                 break;
             case "scissors":
                 playerScore+= 1
-                return "You win, " + playerSelectionLower + " beats " + computerSelectionLower + "!"
+                return "You win, " + playerSelection + " beats " + computerSelection + "!"
                 break;
         }
     }
-    if(playerSelectionLower === "paper"){
-        switch(computerSelectionLower){
+    if(playerSelection === "paper"){
+        switch(computerSelection){
             case "rock":
                 playerScore+= 1
-                return "You win, " + playerSelectionLower + " beats " + computerSelectionLower + "!"
+                return "You win, " + playerSelection + " beats " + computerSelection + "!"
                 break;
             case "paper":
-                return "It's a tie! You both chose " + playerSelectionLower + "."
+                return "It's a tie! You both chose " + playerSelection + "."
                 break;
             case "scissors":
                 computerScore+= 1
-                return "You lose, " + playerSelectionLower + " is beaten by " + computerSelectionLower + "!"
+                return "You lose, " + playerSelection + " is beaten by " + computerSelection + "!"
                 break;
         }
     }
-    if(playerSelectionLower === "scissors"){
-        switch(computerSelectionLower){
+    if(playerSelection === "scissors"){
+        switch(computerSelection){
             case "rock":
                 computerScore+= 1
-                return "You lose, " + playerSelectionLower + " is beaten by " + computerSelectionLower + "!"
+                return "You lose, " + playerSelection + " is beaten by " + computerSelection + "!"
                 break;
             case "paper":
                 playerScore+= 1
-                return "You win, " + playerSelectionLower + " beats " + computerSelectionLower + "!"
+                return "You win, " + playerSelection + " beats " + computerSelection + "!"
                 break;
             case "scissors":
-                return "It's a tie! You both chose " + playerSelectionLower + "."
+                return "It's a tie! You both chose " + playerSelection + "."
                 break;
         }
     }
 
-}
-
-function game(){
-        console.log(playRound(playerPlay(), computerPlay()));
-        console.log("Player score: " + playerScore);
-        console.log("Computer score: " + computerScore);
-
-
-        if (playerScore > computerScore){
-            console.log("You have won the match!")
-        }
-        else if(computerScore > playerScore){
-            console.log("You have lost the match, try again!")
-        }
-        else{
-            console.log("You tied the match!")
-        }
-        
 }
 
 function computerPlay(){
@@ -92,15 +77,28 @@ function computerPlay(){
 
     switch(rng){
         case 0:
-            return "Rock";
+            computerSelection = "rock";
+            computerChoiceText.textContent = "Rock";
             break;
         case 1:
-            return "Paper";
+            computerSelection = "paper";
+            computerChoiceText.textContent = "Paper";
             break;
         case 2:
-            return "Scissors";
+            computerSelection = "scissors";
+            computerChoiceText.textContent = "Scissors";
             break;
     }
 }
 
-console.log(game());
+function Tie(){
+
+}
+
+function Win(){
+
+}
+
+function Loss(){
+
+}
