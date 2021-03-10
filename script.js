@@ -8,34 +8,37 @@ const choiceRock = document.querySelector('#rock');
 const choicePaper = document.querySelector('#paper');
 const choiceScissors = document.querySelector('#scissors');
 const computerChoiceText = document.querySelector('#computer-choice');
+const roundResultText = document.querySelector('#round-result');
 
 choiceRock.addEventListener('click', () => {
     let playerSelection = "rock";
-    playRound(playerSelection, computerPlay());
+    computerPlay();
+    playRound(playerSelection, computerSelection);
 });
 choicePaper.addEventListener('click', () => {
     let playerSelection = "paper";
-    playRound(playerSelection, computerPlay());
+    computerPlay();
+    playRound(playerSelection, computerSelection);
 });
 choiceScissors.addEventListener('click', () => {
     let playerSelection = "scissors";
-    playRound(playerSelection, computerPlay());
+    computerPlay();
+    playRound(playerSelection, computerSelection);
 });
 
 function playRound(playerSelection, computerSelection){
-
     if(playerSelection === "rock"){
         switch(computerSelection){
             case "rock":
-                return "It's a tie! You both chose " + playerSelection + "."
+                Tie();
                 break;
             case "paper":
                 computerScore+= 1
-                return "You lose, " + playerSelection + " is beaten by " + computerSelection + "!"
+                Loss();
                 break;
             case "scissors":
                 playerScore+= 1
-                return "You win, " + playerSelection + " beats " + computerSelection + "!"
+                Win();
                 break;
         }
     }
@@ -43,14 +46,14 @@ function playRound(playerSelection, computerSelection){
         switch(computerSelection){
             case "rock":
                 playerScore+= 1
-                return "You win, " + playerSelection + " beats " + computerSelection + "!"
+                Win();
                 break;
             case "paper":
-                return "It's a tie! You both chose " + playerSelection + "."
+                Tie();
                 break;
             case "scissors":
                 computerScore+= 1
-                return "You lose, " + playerSelection + " is beaten by " + computerSelection + "!"
+                Loss();
                 break;
         }
     }
@@ -58,14 +61,14 @@ function playRound(playerSelection, computerSelection){
         switch(computerSelection){
             case "rock":
                 computerScore+= 1
-                return "You lose, " + playerSelection + " is beaten by " + computerSelection + "!"
+                Loss();
                 break;
             case "paper":
                 playerScore+= 1
-                return "You win, " + playerSelection + " beats " + computerSelection + "!"
+                Win();
                 break;
             case "scissors":
-                return "It's a tie! You both chose " + playerSelection + "."
+                Tie();
                 break;
         }
     }
@@ -92,13 +95,13 @@ function computerPlay(){
 }
 
 function Tie(){
-
+    roundResultText.textContent = "You tied!";
 }
 
 function Win(){
-
+    roundResultText.textContent = "You won!";
 }
 
 function Loss(){
-
+    roundResultText.textContent = "Computer won!";
 }
