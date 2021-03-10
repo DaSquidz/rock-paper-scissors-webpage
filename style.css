@@ -19,3 +19,20 @@ body {
     font-size: 8vw;
     font-family: 'VT323';
 }
+
+hr {
+    height: 1px;
+    border: 0;
+    width: 85vw;
+    background-color: var(--gb-light-green);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1.5fr;
+    column-gap: 5vw;
+}
+
+.choice {
+    background-color: var(--gb-light-green);
+}
