@@ -23,8 +23,9 @@ h1 {
 h2 {
     color: var(--gb-light-green);
     text-align: center;
-    font-size: 54px;
+    font-size: 3.5vw;
     font-family:'VT323' monospace;
+    margin: 15px auto 15px auto;
 }
 
 hr {
@@ -66,6 +67,13 @@ hr {
 }
 
 .computer-choice {
+    color: var(--gb-white);
+    text-align: center;
+    margin: 20px auto 20px auto;
+    font-size: 3vw;
+}
+
+.result {
     color: var(--gb-white);
     text-align: center;
     margin: 20px auto 20px auto;
