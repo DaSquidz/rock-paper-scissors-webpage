@@ -13,11 +13,18 @@ body {
     background-color: var(--gb-dark-green);
 }
 
-#title {
+h1 {
     color: var(--gb-light-green);
     text-align: center;
     font-size: 80px;
-    font-family: 'VT323';
+    font-family: 'VT323' monospace;
+}
+
+h2 {
+    color: var(--gb-light-green);
+    text-align: center;
+    font-size: 54px;
+    font-family:'VT323' monospace;
 }
 
 hr {
@@ -38,4 +45,13 @@ hr {
 .choice {
     border-color: var(--gb-light-green);
     border: 2px solid var(--gb-light-green);
+    color: var(--gb-light-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.choice:hover {
+    box-shadow: var(--gb-green) 0px 10px 20px, var(--gb-green) 0px 6px 6px;
 }
