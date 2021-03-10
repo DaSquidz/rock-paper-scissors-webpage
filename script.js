@@ -1,5 +1,11 @@
 'use strict';
 
+const gbDarkGreen = "#081820";
+const gbGreen = "#346856";
+const gbLightGreen = "#88c070";
+const gbWhite = "#e0f8d0";
+
+
 let playerScore = 0;
 let computerScore = 0;
 let computerSelection = "&nbsp";
@@ -95,13 +101,16 @@ function computerPlay(){
 }
 
 function Tie(){
+    document.getElementById("round-result").style.color = gbGreen;
     roundResultText.textContent = "You tied!";
 }
 
 function Win(){
+    document.getElementById("round-result").style.color = gbLightGreen;
     roundResultText.textContent = "You won!";
 }
 
 function Loss(){
+    document.getElementById("round-result").style.color = gbWhite;
     roundResultText.textContent = "Computer won!";
 }

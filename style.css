@@ -22,7 +22,7 @@ h1 {
 }
 
 h2 {
-    color: var(--gb-light-green);
+    color: var(--gb-green);
     text-align: center;
     font-size: 3vw;
     font-family:'VT323' monospace;
