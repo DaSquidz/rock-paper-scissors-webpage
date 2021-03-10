@@ -16,7 +16,7 @@ body {
 #title {
     color: var(--gb-light-green);
     text-align: center;
-    font-size: 8vw;
+    font-size: 80px;
     font-family: 'VT323';
 }
 
@@ -29,7 +29,7 @@ hr {
 
 .container {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr 1.5fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     column-gap: 5vw;
 }
 
