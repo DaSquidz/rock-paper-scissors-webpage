@@ -16,4 +16,6 @@ body {
 #title {
     color: var(--gb-light-green);
     text-align: center;
+    font-size: 8vw;
+    font-family: 'VT323';
 }
