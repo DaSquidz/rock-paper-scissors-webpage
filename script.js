@@ -3,6 +3,20 @@
 let playerScore = 0;
 let computerScore = 0;
 
+const choiceRock = document.querySelector('#rock');
+const choicePaper = document.querySelector('#paper');
+const choiceScissors = document.querySelector('#scissors');
+
+choiceRock.addEventListener('click', () => {
+    alert("You chose rock");
+});
+choicePaper.addEventListener('click', () => {
+    alert("You chose paper");
+});
+choiceScissors.addEventListener('click', () => {
+    alert("You chose scissors");
+});
+
 function playRound(playerSelection, computerSelection){
     let playerSelectionLower = playerSelection.toLowerCase();
     let computerSelectionLower = computerSelection.toLowerCase();
