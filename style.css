@@ -29,10 +29,13 @@ hr {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    column-gap: 5vw;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    min-height: 200px;
+    width: 100%;
+    gap: 30px;
 }
 
 .choice {
-    background-color: var(--gb-light-green);
+    border-color: var(--gb-light-green);
+    border: 2px solid var(--gb-light-green);
 }
