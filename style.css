@@ -1,0 +1,19 @@
+
+
+:root {
+    --gb-dark-green: #081820;
+    --gb-green:  #346856;
+    --gb-light-green: #88c070;
+    --gb-white: #e0f8d0;
+
+    font-family: 'VT323', monospace;
+}
+
+body {
+    background-color: var(--gb-dark-green);
+}
+
+#title {
+    color: var(--gb-light-green);
+    text-align: center;
+}

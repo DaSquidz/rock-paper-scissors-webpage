@@ -76,14 +76,14 @@ function game(){
 }
 
 function playerPlay(){
-    let choice = window.prompt("Choose your play! (Rock, Paper or Scissors)")
-    let choiceLower = choice.toLowerCase();
-    if(choiceLower === "rock" || choiceLower === "paper" || choiceLower === "scissors"){
-        return choiceLower;
-    }
-    else{
-        window.alert("You typed a choice that does not exist, go to jail (jk, try again by refreshing the window)")
-    }
+    // let choice = window.prompt("Choose your play! (Rock, Paper or Scissors)")
+    // let choiceLower = choice.toLowerCase();
+    // if(choiceLower === "rock" || choiceLower === "paper" || choiceLower === "scissors"){
+    //     return choiceLower;
+    // }
+    // else{
+    //     window.alert("You typed a choice that does not exist, go to jail (jk, try again by refreshing the window)")
+    // }
 }
 
 function computerPlay(){
