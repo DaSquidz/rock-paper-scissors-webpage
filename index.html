@@ -17,13 +17,13 @@ rel="stylesheet" type="text/css">
       <div class="side">
         
       </div>
-      <div class="choice">
+      <div class="choice noselect" id="rock">
         Rock
       </div>
-      <div class="choice">
+      <div class="choice noselect" id="paper">
         Paper
       </div>
-      <div class="choice">
+      <div class="choice noselect" id="scissors">
         Scissors
       </div>
       <div class="side">
@@ -37,10 +37,16 @@ rel="stylesheet" type="text/css">
     <div class="computer-choice">
       Paper
     </div>
-    <div class="result">
+    <div class="round-result">
       You Win!
     </div>
-
+    <div class="score-tracker">
+      Current Score: <br>
+      1 - 0
+    </div>
+    <div class="score-tracker" id="final-result">
+      (First to 5 wins!)
+    </div>
 
 
   <script src="script.js"></script>

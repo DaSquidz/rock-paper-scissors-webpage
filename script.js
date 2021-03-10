@@ -55,13 +55,11 @@ function playRound(playerSelection, computerSelection){
 
 }
 
-// Plays 5 rounds
 function game(){
-        for(let i = 0; i < 5; i++){
-            console.log(playRound(playerPlay(), computerPlay()));
-            console.log("Player score: " + playerScore);
-            console.log("Computer score: " + computerScore);
-        }
+        console.log(playRound(playerPlay(), computerPlay()));
+        console.log("Player score: " + playerScore);
+        console.log("Computer score: " + computerScore);
+
 
         if (playerScore > computerScore){
             console.log("You have won the match!")
@@ -73,17 +71,6 @@ function game(){
             console.log("You tied the match!")
         }
         
-}
-
-function playerPlay(){
-    // let choice = window.prompt("Choose your play! (Rock, Paper or Scissors)")
-    // let choiceLower = choice.toLowerCase();
-    // if(choiceLower === "rock" || choiceLower === "paper" || choiceLower === "scissors"){
-    //     return choiceLower;
-    // }
-    // else{
-    //     window.alert("You typed a choice that does not exist, go to jail (jk, try again by refreshing the window)")
-    // }
 }
 
 function computerPlay(){
