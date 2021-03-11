@@ -15,6 +15,8 @@ const choicePaper = document.querySelector('#paper');
 const choiceScissors = document.querySelector('#scissors');
 const computerChoiceText = document.querySelector('#computer-choice');
 const roundResultText = document.querySelector('#round-result');
+const scoreTracker = document.querySelector('#score-tracker');
+const finalResult = document.querySelector('#final-result');
 
 choiceRock.addEventListener('click', () => {
     let playerSelection = "rock";
@@ -79,6 +81,8 @@ function playRound(playerSelection, computerSelection){
         }
     }
 
+    RefreshScore();
+    CheckGameOver();
 }
 
 function computerPlay(){
@@ -113,4 +117,17 @@ function Win(){
 function Loss(){
     document.getElementById("round-result").style.color = gbWhite;
     roundResultText.textContent = "Computer won!";
+}
+
+function RefreshScore(){
+    scoreTracker.textContent = `Current Score: ${playerScore} - ${computerScore}`
+}
+
+function CheckGameOver(){
+    if(playerScore >= 5){
+        finalResult.textContent = "You won the match! Refresh the page to play again!";
+    }
+    if(computerScore >= 5){
+        finalResult.textContent = "The computer won the match! Refresh the page to play again!";
+    }
 }
