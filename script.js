@@ -18,6 +18,7 @@ const computerChoiceText = document.querySelector('#computer-choice');
 const roundResultText = document.querySelector('#round-result');
 const scoreTracker = document.querySelector('#score-tracker');
 const finalResult = document.querySelector('#final-result');
+const restartButton = document.querySelector('#restart');
 
 choiceRock.addEventListener('click', () => {
     if(canPlay){
@@ -40,6 +41,8 @@ choiceScissors.addEventListener('click', () => {
         playRound(playerSelection, computerSelection);
     }
 });
+
+restartButton.addEventListener('click', Restart);
 
 function playRound(playerSelection, computerSelection){
     if(playerSelection === "rock"){
@@ -132,11 +135,15 @@ function RefreshScore(){
 
 function CheckGameOver(){
     if(playerScore >= 5){
-        finalResult.textContent = "You won the match! Refresh the page to play again!";
+        finalResult.textContent = "You won the match!";
         canPlay = false;
     }
     if(computerScore >= 5){
-        finalResult.textContent = "The computer won the match! Refresh the page to play again!";
+        finalResult.textContent = "The computer won the match!";
         canPlay = false;
     }
+}
+
+function Restart(){
+    location.reload();
 }
