@@ -9,6 +9,7 @@ const gbWhite = "#e0f8d0";
 let playerScore = 0;
 let computerScore = 0;
 let computerSelection = "&nbsp";
+let canPlay = true;
 
 const choiceRock = document.querySelector('#rock');
 const choicePaper = document.querySelector('#paper');
@@ -19,19 +20,25 @@ const scoreTracker = document.querySelector('#score-tracker');
 const finalResult = document.querySelector('#final-result');
 
 choiceRock.addEventListener('click', () => {
-    let playerSelection = "rock";
-    computerPlay();
-    playRound(playerSelection, computerSelection);
+    if(canPlay){
+        let playerSelection = "rock";
+        computerPlay();
+        playRound(playerSelection, computerSelection);
+    }
 });
 choicePaper.addEventListener('click', () => {
-    let playerSelection = "paper";
-    computerPlay();
-    playRound(playerSelection, computerSelection);
+    if(canPlay){
+        let playerSelection = "paper";
+        computerPlay();
+        playRound(playerSelection, computerSelection);
+    }
 });
 choiceScissors.addEventListener('click', () => {
-    let playerSelection = "scissors";
-    computerPlay();
-    playRound(playerSelection, computerSelection);
+    if(canPlay){
+        let playerSelection = "scissors";
+        computerPlay();
+        playRound(playerSelection, computerSelection);
+    }
 });
 
 function playRound(playerSelection, computerSelection){
@@ -126,8 +133,10 @@ function RefreshScore(){
 function CheckGameOver(){
     if(playerScore >= 5){
         finalResult.textContent = "You won the match! Refresh the page to play again!";
+        canPlay = false;
     }
     if(computerScore >= 5){
         finalResult.textContent = "The computer won the match! Refresh the page to play again!";
+        canPlay = false;
     }
 }
